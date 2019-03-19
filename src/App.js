@@ -24,13 +24,14 @@ class Contact extends Component {
       message: this.state.message
     }
 
-    axios.post('API_URI', data)
+    axios
+      .post("https://nodejs-express-goccxdf52.now.sh/api/v1", data)
       .then(res => {
-        this.setState({ sent: true }, this.resetForm())
+        this.setState({ sent: true }, this.resetForm());
       })
       .catch(() => {
-        console.log('Message not sent')
-      })
+        console.log("Message not sent");
+      });
   }
 
   resetForm = () => {
